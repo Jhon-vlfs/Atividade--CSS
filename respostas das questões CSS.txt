@@ -1,0 +1,279 @@
+1. O que significa CSS e qual é o seu propósito principal?
+ R: CSS=Cascading Style Sheets (Folhas de Estilo em Cascata), e é como se fosse um organizador de apresentações visuais de documentos - podendo ser HTML ou XML - e define como será a exibição do documento no navegador.
+2. Qual a diferença entre CSS inline, interno e externo?
+ R: O inline é melhor para elementos HTML específicos;
+    O interno é melhor para uma única página de exibição;
+    O externo é considerado o melhor, pois pode ser reutilizado, além de linkar cada página ao arquivo.
+3. Explique o que é um seletor em CSS e dê três exemplos de seletores diferentes.
+ R: Seletor basicamente é a parte que especifica quais elementos serão afetados pelo estilo definido em cada regra. Ex: Seletor de Classe, Seletor de tipo e Seletor de Atributo.
+4. O que é o modelo de caixa (Box Model) em CSS? Quais são as partes principais que o
+compõem?
+ R: É um tipo de layout sendo representado por uma caixa retangular, e os componentes (content, padding, border e margin) interagem entre si.
+5. Qual é a função das propriedades `padding` e `margin`? Como elas diferem?
+ R: Padding= espaço interno entre o conteúdo  e a borda da caixa;
+    Margin= espaço externo entre a caixa e os elementos ao redor.
+6. Como o posicionamento `relative` difere do `absolute` em CSS?
+ R: O relative posiciona de acordo com o próprio elemento, começando do ponto 0 da tela (canto superior esquerdo), já o absolute utiliza o ponto 0 de outros elementos (elemento pai).
+7. O que são Media Queries e como elas são utilizadas no design responsivo?
+ R: É uma estilização específica com condições que se adequam aos diferentes layout de tela. Sua utilização é de extrema importância no design responsivo, já que atualmente os sites webs são acessados por variados tipos de dispositivos, o que promove uma maior usabilidade, maior desempenho e acaba por deixar mais "leve" ao retirar certos elementos para dispositivos que não possuem tal função.
+8. Explique a diferença entre unidades relativas (`em`, `rem`, `%`) e unidades absolutas (`px`, `cm`).
+ R: As unidades absolutas têm tamanho fixo, já que usam do próprio elemento como referência, já as unidades relativas se adaptam ao contexto (elemento pai e elemento raiz<html>).
+9. Qual é a função da propriedade `display`? Compare as opções `block`, `inline` e `inline-block`.
+ R: A propriedade display define a maneira como o elemento HTML deve ser renderizado interna e externamente. 
+    `block` ocupa a largura disponível do elemento pai relacionado;
+    `inline` ocupa apenas o necessário de acordo com o conteúdo que vai ser exposto;
+    `inline-block` um pouco de ambos, ocupa o espaço necessário, porém pode ser dimensionados como o block.
+10. Como as pseudo-classes são usadas em CSS? Dê dois exemplos práticos.
+ R: Basicamente são as "palavras-chaves" nos seletores que especifica um estado especial do elemento selecionado.
+    Ex:  a:link {
+            color: blue;
+            text-decoration: none;
+            font-weight: bold;
+                                         //estliza o link de acordo se você já visitou ou não. Ainda pode adicionar o a:hover
+         a:visited {
+           color: purple;
+
+11. Crie um estilo CSS que aplique a cor azul a todos os títulos `h1` de uma página.
+  Ex: <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilo CSS exemplo</title>
+    <style>
+        h1{
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        É assim que funcionaria
+    </h1>
+    <p>Aqui não fica azul</p>
+    <h1>Mas aqui fica</h1>
+</body>
+</html>
+
+12. Estilize um parágrafo `p` com uma margem de 20 pixels ao redor e um preenchimento de 10
+pixels.
+  Ex: <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parágrafo estilizado exemplo</title>
+    <style>
+        p {
+            padding: 10px;
+            margin: 20px;
+            background-color: rgb(208, 211, 210);
+        }
+    </style>
+</head>
+<body>
+    <h1>O título começa do ponto 0</h1>
+    <p>Mas o parágrafo ficaria estilizado</p>
+</body>
+</html>
+
+13. Utilize CSS para definir que todos os links `a` mudem a cor para verde quando o mouse passa
+sobre eles.
+  Ex: <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link estilizado exemplo</title>
+    <style>
+        a:hover {
+           color: rgb(53, 163, 53);
+        }
+    </style>
+</head>
+<body>
+    <h1>Título normal</h1>
+    <p>Pode testar os links</p>
+    <ul>
+        <li><a href="https://github.com/Jhon-vlfs" target="_blank">Link para o meu github</a></li>
+        <li><a href="https://youtu.be/prNwKbJNL2g?si=2_el42cAJcVd46pE" target="_blank">Link para uma boa música</a></li>
+    </ul>
+</body>
+</html>
+
+14. Defina um layout de página simples com três colunas usando `display: flex`.
+  Ex: <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout simples com três colunas</title>
+    <style>
+        .pai{
+            display: flex;
+            gap: 5px;
+        }
+        .colunas{
+            flex: 3;
+            padding: 20px;
+            border: 1px solid #000000;
+            background-color: burlywood;
+        }
+    </style>
+</head>
+<body>
+    <div class="pai">
+        <div class="colunas">Coluna A</div>
+        <div class="colunas">Coluna B</div>
+        <div class="colunas">Coluna C</div>
+    </div>
+</body>
+</html>
+
+15. Crie uma regra CSS que aplique uma borda de 2 pixels, sólida e preta, em todos os elementos
+`div`.
+  Ex: <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout div com borda</title>
+    <style>
+        div{
+            border: 2px solid #000000;
+            background-color: rgb(59, 69, 160);
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Uma div com borda personalizada</p>
+    </div>
+    <br>
+    <div>
+        <p>Outra div pra você</p>
+    </div>
+    <br>
+    <div>
+        <p>Mais uma pra consolidar</p>
+    </div>
+</body>
+</html>
+
+16. Estilize uma classe chamada `.card` para ter uma sombra de caixa e bordas arredondadas.
+ R: <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sombra e bordas arredondadas no card</title>
+    <style>
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px;
+            background-color: #9d999d;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <p>Aqui está o exemplo funcional</p>
+    </div>
+</body>
+</html>
+
+17. Faça um menu de navegação horizontal, onde os itens estejam dispostos em linha usando
+`display: inline-block`.
+ R: <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu navegação em linha</title>
+    <style>
+        .mn {
+            padding: 10px;
+            background-color: #9d999d;
+            font-weight: bold;
+            text-align: center;
+        }
+        .mn a {
+            display: inline-block;
+            color: #000000;
+            padding: 5px 10px;
+            text-decoration: none;
+            margin-right: 15px;
+            margin-left: 15px;
+        }
+        .mn a:hover {
+            background-color: #6B705C;
+        }
+    </style>
+</head>
+<body>
+    <div class="mn">
+        <a href="#home">Home</a>
+        <a href="#start">Começo</a>
+        <a href="#services">Serviço</a>
+        <a href="#settings">Configurações</a>
+    </div>
+</body>
+</html>
+
+18. Utilize uma Media Query para alterar o fundo da página para cinza quando a largura da tela for
+inferior a 600 pixels.
+ *OBS: Não consegui, Filipe. Vou tirar essa dúvida contigo em outra hora.
+19. Crie um estilo CSS para posicionar um rodapé (`footer`) fixo na parte inferior da página.
+ R: <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rodapé embaixo no site</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .ctd {
+            flex: 1;
+            padding: 15px;
+        }
+        footer {
+            background-color: #6B705C;
+            color: antiquewhite;
+            text-align: center;
+            padding: 10px 20px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="ctd">
+        <h1>Exemplo legal</h1>
+        <p>Aqui seria uma página com o rodapé fixo lá.</p>
+        <p>No caso como apareceria sem se mexer conforme eu vou mexendo a tela, realmente legal!</p>
+    </div>
+    <footer>
+        &copy; João Victor Lima.ltda 2024 - todos os direitos reservados.
+    </footer>
+</body>
+</html>
+
+20. Escreva um código CSS que centralize um elemento `div` dentro de seu contêiner pai tanto
+horizontalmente quanto verticalmente.
+ *OBS: Eu também não consegui esse, mais especificamente na parte vertical, a horizontal eu até consigo (e até fiz em uma questão anterior) mas verticalmente, eu não consigo.
